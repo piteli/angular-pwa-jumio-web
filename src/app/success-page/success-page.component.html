@@ -1,0 +1,8 @@
+<div class="container">
+    <h1 *ngIf="items.length == 0">Please wait. Fetching the scan results in couple of minutes...</h1>
+    <div class="card" *ngFor="let item of items">
+        <img [src]="item.imageURL" style="width:200px;height:200px;" />
+        <h4>Type : {{item.type}}</h4>
+        <h3 style="color:green">Status : {{item.label}}</h3>
+    <div>
+</div>

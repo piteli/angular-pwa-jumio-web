@@ -1,16 +1,1 @@
-<body>
-  <div class="header">
-    <h2>Jumio Web</h2>
-  </div>
-
-  <div class="container">
-
-
-    <div *ngFor="let item of items" style="display:flex; flex-direction:column">
-      <img [src]="item.imageURL" style="height : 100px;width : 100px; object-fit: contain;" />
-      <h4 class="type">Type : {{item.status}}</h4>
-      <p class="status">Status : {{item.label}}</p>
-    </div>
-  </div>
-
-</body>
+<router-outlet></router-outlet>
