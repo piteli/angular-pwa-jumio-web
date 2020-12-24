@@ -28,7 +28,7 @@ app.get('/api/test', (req, res) => {
 
 app.get('/api/initiate-jumio-web', async(req, res) => {
 
-  const proto = req.connection && req.connection.encrypted ? 'https' : 'http';
+  const proto = req.connection.encrypted ? 'https' : 'http';
   const payload = {
     customerInternalReference : "pannirselvam",
     userReference : "pannir",
