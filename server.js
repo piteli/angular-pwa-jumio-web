@@ -28,7 +28,14 @@ app.get('/api/test', (req, res) => {
 
 app.get('/api/initiate-jumio-web', async(req, res) => {
 
-  const proto = req.connection.encrypted ? 'https' : 'http';
+  function getProtocol(req){
+    var proto = req.connection.encrypted ? 'https' : 'http';
+    // only do this if you trust the proxy
+    proto = req.headers['x-forwarded-proto'] || proto;
+    return proto.split(/\s*,\s*/)[0];
+  }
+
+  const proto = getProtocol(req);
   const payload = {
     customerInternalReference : "pannirselvam",
     userReference : "pannir",
