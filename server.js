@@ -36,6 +36,9 @@ app.get('/api/initiate-jumio-web', async(req, res) => {
     callbackUrl : "https://www.pnmb.com.my/KopTenCoreAPI/api/Kopten/Callback"
   }
 
+  console.log('hey, payload is here');
+  console.log(payload);
+
   const headers = {
     'Content-Type' : 'application/json',
     'Accept' : 'application/json',
@@ -44,7 +47,7 @@ app.get('/api/initiate-jumio-web', async(req, res) => {
   }
 
   axios({url : 'https://netverify.com/api/v4/initiate', method : 'POST',
-  data : JSON.stringify(payload), responseType : 'json', 
+  data : JSON.stringify(payload), 
   headers: headers})
   .then((result) => {
     res.json(result.data);
