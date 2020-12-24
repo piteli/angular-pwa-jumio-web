@@ -27,12 +27,14 @@ app.get('/api/test', (req, res) => {
 })
 
 app.get('/api/initiate-jumio-web', async(req, res) => {
+
+  const proto = req.connection && req.connection.encrypted ? 'https' : 'http';
   const payload = {
     customerInternalReference : "pannirselvam",
     userReference : "pannir",
     workflowId : 200,
-    successUrl : `${req.protocol + "://" + req.headers.host}/success-page`,
-    errorUrl : `${req.protocol + "://" + req.headers.host}/error-page`,
+    successUrl : `${proto + "://" + req.headers.host}/success-page`,
+    errorUrl : `${proto + "://" + req.headers.host}/error-page`,
     callbackUrl : "https://www.pnmb.com.my/KopTenCoreAPI/api/Kopten/Callback"
   }
 
