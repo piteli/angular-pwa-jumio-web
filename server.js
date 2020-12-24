@@ -7,7 +7,7 @@ var FormData = require('form-data');
 var multer = require('multer');
 var upload = multer();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist/jumio-web-test')));
 
 app.use(bodyParser.json({limit : '50mb'}));
 app.use(bodyParser.urlencoded({
@@ -54,7 +54,7 @@ app.get('/api/initiate-jumio-web', async(req, res) => {
 })
 
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: 'dist/'}
+    res.sendFile('index.html', {root: 'dist/jumio-web-test'}
   );
 });
   
