@@ -7,7 +7,7 @@ var FormData = require('form-data');
 var multer = require('multer');
 var upload = multer();
 
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(bodyParser.json({limit : '50mb'}));
 app.use(bodyParser.urlencoded({
