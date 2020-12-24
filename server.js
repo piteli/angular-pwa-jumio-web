@@ -54,7 +54,7 @@ app.get('/api/initiate-jumio-web', async(req, res) => {
 })
 
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: 'www/'}
+    res.sendFile('index.html', {root: 'dist/'}
   );
 });
   
